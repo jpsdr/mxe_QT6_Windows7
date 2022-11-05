@@ -6,7 +6,7 @@ PKG := qt6-qtmultimedia
 $(eval $(QT6_METADATA))
 
 $(PKG)_CHECKSUM := 304d28b8e592435293893b0110d5f3534407604d1e04d8a0b0e5b34afe577303
-$(PKG)_DEPS     := cc qt6-conf qt6-qtbase qt6-qtshadertools ffmpeg
+$(PKG)_DEPS     := cc qt6-conf qt6-qtbase qt6-qtshadertools
 
 QT6_PREFIX   = '$(PREFIX)/$(TARGET)/$(MXE_QT6_ID)'
 QT6_QT_CMAKE = '$(QT6_PREFIX)/$(if $(findstring mingw,$(TARGET)),bin,libexec)/qt-cmake-private' \
