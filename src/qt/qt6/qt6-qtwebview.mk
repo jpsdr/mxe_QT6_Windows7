@@ -2,13 +2,11 @@
 
 include src/qt/qt6/qt6-conf.mk
 
-PKG := qt6-qtshadertools
+PKG := qt6-qtwebview
 $(eval $(QT6_METADATA))
 
-$(PKG)_CHECKSUM      := 55b70cd632473a8043c74ba89310f7ba9c5041d253bc60e7ae1fa789169c4846
-$(PKG)_TARGETS       := $(BUILD) $(MXE_TARGETS)
-$(PKG)_DEPS_$(BUILD) := qt6-conf qt6-qtbase
-$(PKG)_DEPS          := cc $($(PKG)_DEPS_$(BUILD)) $(BUILD)~$(PKG)
+$(PKG)_CHECKSUM := f56bc09e9c84fa06f3955871ba37065556696c72be9c7620925eb0fd83569e22
+$(PKG)_DEPS     := cc qt6-conf qt6-qtbase qt6-qtdeclarative
 
 QT6_PREFIX   = '$(PREFIX)/$(TARGET)/$(MXE_QT6_ID)'
 QT6_QT_CMAKE = '$(QT6_PREFIX)/$(if $(findstring mingw,$(TARGET)),bin,libexec)/qt-cmake-private' \
