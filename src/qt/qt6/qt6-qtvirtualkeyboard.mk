@@ -2,13 +2,11 @@
 
 include src/qt/qt6/qt6-conf.mk
 
-PKG := qt6-qtshadertools
+PKG := qt6-qtvirtualkeyboard
 $(eval $(QT6_METADATA))
 
-$(PKG)_CHECKSUM      := 55b70cd632473a8043c74ba89310f7ba9c5041d253bc60e7ae1fa789169c4846
-$(PKG)_TARGETS       := $(BUILD) $(MXE_TARGETS)
-$(PKG)_DEPS_$(BUILD) := qt6-conf qt6-qtbase
-$(PKG)_DEPS          := cc $($(PKG)_DEPS_$(BUILD)) $(BUILD)~$(PKG)
+$(PKG)_CHECKSUM := 1022a3bc4093ec732e85b659158c8a70a31eecbd0dfef4e4f6c67f474f89a264
+$(PKG)_DEPS     := cc qt6-conf qt6-qtbase
 
 QT6_PREFIX   = '$(PREFIX)/$(TARGET)/$(MXE_QT6_ID)'
 QT6_QT_CMAKE = '$(QT6_PREFIX)/$(if $(findstring mingw,$(TARGET)),bin,libexec)/qt-cmake-private' \
